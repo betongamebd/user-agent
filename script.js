@@ -4,7 +4,7 @@
 
 const CONFIG = {
     // 1. আপনার Google Apps Script এর URL এখানে বসান
-    scriptURL: "https://script.google.com/macros/s/AKfycbywGAZvAc0buqMIThlVxtRMFXPMD_nReExgINuunDntwnvsHvE7MVslT5EFMvfU2WAY/exec",
+    scriptURL: "https://script.google.com/macros/s/AKfycbxu23YNqJbDImYa8SFexSz-1SWKRrgkjx2xEM1Dazo-jb8t1PHosE15qkK3b3zDl7g7yA/exec",
 
     // 2. আপনার সাইটের লোগো লিংক (না থাকলে খালি রাখুন)
     logoURL: "", 
@@ -197,3 +197,4 @@ function generateData() {
         out.scrollTop = out.scrollHeight;
     }, 800);
 }
+
