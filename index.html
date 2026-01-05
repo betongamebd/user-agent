@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProToolsHub - Digital Solutions</title>
+    <title>ProToolsHub - Premium Tools</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -22,30 +22,34 @@
 <body class="bg-dark text-white overflow-x-hidden selection:bg-purple-500 selection:text-white">
 
     <nav class="fixed top-0 w-full z-50 bg-dark/90 backdrop-blur-md border-b border-white/10 px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-2 cursor-pointer" onclick="showSection('home')">
-            <img id="siteLogo" src="" alt="Logo" class="w-8 h-8 rounded object-cover hidden"> <div id="textLogo" class="p-2 bg-gradient-to-tr from-purple-600 to-blue-600 rounded-lg shadow-lg">
-                <i class="ph-fill ph-lightning text-white text-xl"></i>
+        <div class="flex items-center gap-2 cursor-pointer" onclick="window.location.reload()">
+            <img id="imgLogo" src="" alt="Logo" class="h-10 w-auto hidden object-contain">
+            <div id="textLogo" class="flex items-center gap-2">
+                <div class="p-2 bg-gradient-to-tr from-purple-600 to-blue-600 rounded-lg shadow-lg">
+                    <i class="ph-fill ph-lightning text-white text-xl"></i>
+                </div>
+                <span class="text-xl font-bold tracking-wide">ProTools<span class="text-purple-400">Hub</span></span>
             </div>
-            <span class="text-xl font-bold tracking-wide">ProTools<span class="text-purple-400">Hub</span></span>
         </div>
         
         <div class="hidden md:flex gap-6 text-sm font-medium text-gray-300">
-            <a href="#features" class="hover:text-white transition">Tools</a>
-            <a href="#courses" class="hover:text-white transition">Courses</a>
-            <a href="#pricing" class="hover:text-white transition">Pricing</a>
+            <div id="menuPublic" class="flex gap-6">
+                <a href="#features" class="hover:text-white transition">Features</a>
+                <a href="#pricing" class="hover:text-white transition">Pricing</a>
+            </div>
+            <div id="menuPrivate" class="hidden gap-6">
+                <button onclick="showSection('dashboard')" class="text-white font-bold border-b-2 border-purple-500">Dashboard & Tools</button>
+            </div>
         </div>
 
-        <button id="navLoginBtn" onclick="openAuthModal()" class="px-5 py-2 rounded-full bg-white/10 border border-white/10 hover:bg-white/20 transition text-sm font-medium">
+        <button id="navAuthBtn" onclick="openAuthModal()" class="px-5 py-2 rounded-full bg-white/10 border border-white/10 hover:bg-white/20 transition text-sm font-medium">
             Login / Register
         </button>
     </nav>
 
     <div id="home-section">
-        
         <header class="pt-32 pb-16 px-6 text-center relative max-w-5xl mx-auto">
             <div class="absolute top-0 left-10 w-72 h-72 bg-purple-600/20 rounded-full blur-[100px] pointer-events-none"></div>
-            <div class="absolute bottom-0 right-10 w-72 h-72 bg-blue-600/20 rounded-full blur-[100px] pointer-events-none"></div>
-
             <span class="inline-block px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-bold uppercase mb-6">
                 Premium Automation Software
             </span>
@@ -56,28 +60,15 @@
             <button onclick="scrollToPricing()" class="px-8 py-3 bg-white text-black font-bold rounded-xl hover:bg-gray-200 transition shadow-lg">Get Started Now</button>
         </header>
 
-        <section id="courses" class="py-10 border-y border-white/5 bg-[#0b1121] overflow-hidden">
-            <div class="text-center mb-6">
-                <p class="text-xs font-bold text-gray-500 uppercase tracking-widest">Premium Courses & Tutorials</p>
-            </div>
-            <div class="marquee-container">
-                <div id="courseMarquee" class="marquee-content gap-6">
-                    </div>
-            </div>
-        </section>
-
         <section id="features" class="py-16 px-6 max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4">Powerful Tools</h2>
+                <h2 class="text-3xl font-bold mb-4">Powerful Generators</h2>
                 <p class="text-gray-400">Everything you need in one dashboard.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="tool-card group"><i class="ph-fill ph-mask-happy text-3xl text-blue-400 mb-4"></i><h3 class="text-xl font-bold mb-2">User Agent Gen</h3><p class="text-gray-400 text-sm">Undetected browser fingerprints.</p></div>
                 <div class="tool-card group"><i class="ph-fill ph-envelope-open text-3xl text-orange-400 mb-4"></i><h3 class="text-xl font-bold mb-2">Email Generator</h3><p class="text-gray-400 text-sm">Unlimited Dot-Trick aliases.</p></div>
-                <div class="tool-card group"><i class="ph-fill ph-shield-check text-3xl text-green-400 mb-4"></i><h3 class="text-xl font-bold mb-2">Email Validator</h3><p class="text-gray-400 text-sm">Live MX & SMTP Check.</p></div>
                 <div class="tool-card group"><i class="ph-fill ph-device-mobile text-3xl text-purple-400 mb-4"></i><h3 class="text-xl font-bold mb-2">Number Generator</h3><p class="text-gray-400 text-sm">Valid mobile numbers.</p></div>
-                <div class="tool-card group"><i class="ph-fill ph-map-pin text-3xl text-yellow-400 mb-4"></i><h3 class="text-xl font-bold mb-2">Address Generator</h3><p class="text-gray-400 text-sm">USA/UK Real Address.</p></div>
-                <div class="tool-card group flex items-center justify-center bg-white/5"><span class="text-gray-500 font-bold">More Coming Soon</span></div>
             </div>
         </section>
 
@@ -97,27 +88,106 @@
         </section>
     </div>
 
-    <div id="dashboard-section" class="hidden min-h-screen flex flex-col md:flex-row">
-        <aside class="w-full md:w-64 bg-[#131c31] border-r border-white/5 flex flex-col p-4">
-            <div class="mb-6 font-bold text-xl">ProTools<span class="text-purple-400">Hub</span></div>
-            <nav class="space-y-2 flex-1">
-                <button onclick="loadTool('ua')" class="sidebar-btn w-full p-3 rounded-lg text-left hover:bg-white/5">User Agent Gen</button>
-                <button onclick="loadTool('email')" class="sidebar-btn w-full p-3 rounded-lg text-left hover:bg-white/5">Email Gen</button>
-                <button onclick="loadTool('mobile')" class="sidebar-btn w-full p-3 rounded-lg text-left hover:bg-white/5">Number Gen</button>
-                <button onclick="loadTool('address')" class="sidebar-btn w-full p-3 rounded-lg text-left hover:bg-white/5">Address Gen</button>
-            </nav>
-            <button onclick="logout()" class="w-full py-2 bg-red-500/10 text-red-400 rounded-lg text-xs font-bold mt-4">Logout</button>
-        </aside>
-        <main class="flex-1 p-8 bg-dark">
-            <h2 id="toolTitle" class="text-2xl font-bold mb-6">Dashboard</h2>
-            <div class="bg-[#0b1121] border border-white/10 rounded-xl h-[500px] flex flex-col p-4 font-mono text-sm text-green-400 shadow-inner">
-                <div id="consoleOutput" class="flex-1 overflow-y-auto mb-4 p-2">// Ready...</div>
-                <div class="flex gap-2">
-                    <button onclick="generateData()" class="px-6 py-2 bg-purple-600 text-white rounded-lg font-bold hover:bg-purple-500 transition">Generate Data</button>
-                    <button class="px-4 py-2 bg-white/10 text-white rounded-lg font-bold hover:bg-white/20 transition">Copy</button>
+    <div id="dashboard-section" class="hidden min-h-screen pt-20 pb-10 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col gap-8">
+            
+            <div class="flex flex-col md:flex-row justify-between items-end gap-4 bg-card p-6 rounded-2xl border border-white/10">
+                <div>
+                    <h2 class="text-2xl font-bold text-white">Welcome Back, <span id="dashUserName" class="text-purple-400">User</span></h2>
+                    <p class="text-gray-400 text-sm mt-1">Plan: <span id="dashUserPlan" class="text-green-400 font-bold">Free</span></p>
+                </div>
+                <div class="flex gap-2 w-full md:w-auto">
+                    <input type="text" id="vipCodeInput" placeholder="Enter VIP Code" class="bg-dark border border-white/20 rounded-lg px-4 py-2 text-white text-sm outline-none w-full">
+                    <button onclick="redeemVipCode()" class="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap">
+                        Activate 1 Year
+                    </button>
                 </div>
             </div>
-        </main>
+
+            <div class="bg-[#0b1121] rounded-2xl border border-white/5 overflow-hidden py-6">
+                <div class="px-6 mb-4 flex items-center justify-between">
+                    <h3 class="font-bold text-gray-400 uppercase tracking-widest text-xs">Premium Courses</h3>
+                    <span class="text-xs text-purple-400">Scrolls Automatically</span>
+                </div>
+                <div class="marquee-container">
+                    <div id="courseMarquee" class="marquee-content gap-6">
+                        </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><i class="ph-fill ph-toolbox text-purple-500"></i> Available Tools</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <div class="tool-card group" onclick="loadTool('ua')">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="ph-fill ph-mask-happy text-3xl text-blue-400"></i>
+                            <i class="ph-bold ph-arrow-right -rotate-45 text-gray-500 group-hover:text-white transition"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">User Agent Gen</h3>
+                        <p class="text-gray-400 text-sm">Generate undetected browser fingerprints.</p>
+                    </div>
+
+                    <div class="tool-card group" onclick="loadTool('email')">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="ph-fill ph-envelope-open text-3xl text-orange-400"></i>
+                            <i class="ph-bold ph-arrow-right -rotate-45 text-gray-500 group-hover:text-white transition"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Email Generator</h3>
+                        <p class="text-gray-400 text-sm">Create unlimited Dot-Trick aliases.</p>
+                    </div>
+
+                    <div class="tool-card group" onclick="loadTool('validator')">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="ph-fill ph-shield-check text-3xl text-green-400"></i>
+                            <i class="ph-bold ph-arrow-right -rotate-45 text-gray-500 group-hover:text-white transition"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Email Validator</h3>
+                        <p class="text-gray-400 text-sm">Check live MX records & SMTP.</p>
+                    </div>
+
+                    <div class="tool-card group" onclick="loadTool('number')">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="ph-fill ph-device-mobile text-3xl text-purple-400"></i>
+                            <i class="ph-bold ph-arrow-right -rotate-45 text-gray-500 group-hover:text-white transition"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Number Generator</h3>
+                        <p class="text-gray-400 text-sm">Valid mobile numbers for any country.</p>
+                    </div>
+
+                    <div class="tool-card group" onclick="loadTool('address')">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="ph-fill ph-map-pin text-3xl text-yellow-400"></i>
+                            <i class="ph-bold ph-arrow-right -rotate-45 text-gray-500 group-hover:text-white transition"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Address Generator</h3>
+                        <p class="text-gray-400 text-sm">Full USA/UK Real Address profiles.</p>
+                    </div>
+
+                    <div class="tool-card group opacity-50 cursor-not-allowed">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="ph-fill ph-squares-four text-3xl text-gray-500"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">More Coming Soon</h3>
+                        <p class="text-gray-400 text-sm">We are adding new tools weekly.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="toolConsole" class="bg-[#0b1121] border border-white/10 rounded-xl p-6 hidden">
+                <div class="flex justify-between items-center mb-4 border-b border-white/10 pb-2">
+                    <span id="activeToolName" class="text-purple-400 font-bold font-mono">Select a tool</span>
+                    <button onclick="document.getElementById('toolConsole').classList.add('hidden')" class="text-red-400 text-xs hover:underline">Close</button>
+                </div>
+                <div id="consoleOutput" class="font-mono text-sm text-green-400 h-32 overflow-y-auto"></div>
+                <div class="mt-4 flex gap-2">
+                    <button onclick="generateData()" class="bg-purple-600 hover:bg-purple-500 text-white px-4 py-2 rounded font-bold text-sm">Generate New</button>
+                    <button class="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded font-bold text-sm">Copy Data</button>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <div id="authModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 overflow-y-auto">
@@ -145,7 +215,6 @@
                         <span class="bg-purple-600/20 px-2 py-1 rounded">Rocket</span>
                     </div>
                 </div>
-
                 <div class="grid grid-cols-2 gap-3">
                     <input type="text" name="name" placeholder="Full Name" required class="bg-dark border border-white/10 rounded-lg px-4 py-3 text-white text-sm outline-none">
                     <input type="text" name="phone" placeholder="Phone" required class="bg-dark border border-white/10 rounded-lg px-4 py-3 text-white text-sm outline-none">
